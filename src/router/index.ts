@@ -3,10 +3,8 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 
 Vue.use(Router);
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
+
+const routes = [
     {
       path: '/',
       redirect: './home',
@@ -24,5 +22,11 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
-  ],
+];
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  linkActiveClass: 'active',
+  routes,
 });
