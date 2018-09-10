@@ -24,7 +24,7 @@
             <h3>项目名称介绍标题</h3>
             <p>项目设计说明文字，以一行说明为最佳</p>
         </div>
-        <div class="">
+        <div class="images">
             <img src="./../../assets/imgs/detail.png"/>
         </div>
     </div>

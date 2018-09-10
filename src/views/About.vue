@@ -36,7 +36,8 @@ export default class Home extends Vue {}
 
 <style scoped lang="less">
 .container {
-	min-width: 1520px;
+	min-width: 1000px;
+	padding: 0 200px;
 }
 .header {
 	box-sizing: content-box;
