@@ -36,8 +36,14 @@ export default class Home extends Vue {}
 
 <style scoped lang="less">
 .container {
-	min-width: 1000px;
+	min-width: 1280px;
+	max-width: 1440px;
+	margin: 0 auto;
 	padding: 0 200px;
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+.el-main {
+	padding: 0;
 }
 .header {
 	box-sizing: content-box;
@@ -45,7 +51,7 @@ export default class Home extends Vue {}
 	height: 33px !important;
 }
 .footer {
-	margin-top: 100px;
+	margin: 50px 0;
 }
 </style>
 

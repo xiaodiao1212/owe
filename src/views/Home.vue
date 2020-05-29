@@ -11,7 +11,6 @@
 			<Footer></Footer>
 		</el-footer>
 	</el-container>
-
     <!-- wosjozhjaooi
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   </div>
@@ -36,13 +35,22 @@ export default class Home extends Vue {}
 
 <style scoped lang="less">
 .container {
-	min-width: 1000px;
-	padding: 0 200px;
+	min-width: 1280px;
+	max-width: 1440px;
+	margin: 0 auto;
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .header {
 	box-sizing: content-box;
 	line-height: 33px;
 	height: 33px !important;
+}
+.footer {
+	position: absolute;
+	bottom: 60px;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
 }
 </style>
 

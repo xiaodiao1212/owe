@@ -4,5 +4,22 @@
     </div>
 </template>
 
-<script lang="ts" src="./Footer.ts"></script>
-<style lang="less" src="./Footer.less" scoped></style>
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class Footer extends Vue {}
+
+</script>
+<style lang="less" scoped>
+.footer {
+    // position: absolute;
+    // bottom: 0;
+    left: 50%;
+    height: 17px;
+    color: #000000;
+    font-size: 12px;
+    // transform: translate(-50%, -300%);
+    opacity: 0.4;
+}
+</style>

@@ -21,14 +21,81 @@
             <span>Home</span>
         </div>
         <div class="header">
-            <h3>项目名称介绍标题</h3>
-            <p>项目设计说明文字，以一行说明为最佳</p>
+            <h3>{{title}}</h3>
+            <p>{{describe || ' '}}</p>
         </div>
-        <div class="images">
-            <img src="./../../assets/imgs/detail.png"/>
-        </div>
+        <el-image class="images" :fit="'contain'" :src="image"></el-image>
     </div>
 
 </template>
-<script lang="ts" src="./Detail.ts"></script>
-<style lang="less" src="./Detail.less" scoped></style>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+@Component({
+  props: {
+    msg: {
+      type: String,
+      default() {
+        return undefined;
+      },
+    },
+  },
+  components: {},
+})
+
+export default class Detail extends Vue {
+  private image: any = null;
+  private title: any = '';
+  private describe: any = '';
+  private beforeMount() {
+    const { title, describe, order } = this.$route.query;
+    this.title = title;
+    this.describe = describe
+    this.image = require(`assets/about/${order}.jpg`);
+  }
+}
+
+</script>
+<style lang="less" scoped>
+.content {
+    text-align: left;
+    padding-top: 100px;
+    p:first-child {
+        color: #4A4A4A;
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 20px;
+    }
+    .detail {
+        font-size: 20px;
+        color: #000000;
+        line-height: 20px;
+    }
+}
+.breadcrumb {
+    a {
+        vertical-align: bottom;
+        height: 22px;
+        display: inline-block;
+        width: 42px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
+.header {
+    h3 {
+        height: 67px;
+        font-size: 48px;
+        color: #4A4A4A;
+        line-height: 67px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 20px;
+        color: #000000;
+    }
+}
+.images {
+    margin-top: 30px;
+    width: 100%;
+}
+</style>

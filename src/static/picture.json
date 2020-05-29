@@ -1,35 +1,35 @@
 {
     "data": [
         [{
-            "pic": "a-1",
+            "pic": "picture-01",
             "detail": "赵斌天才"
         },
         {
-            "pic": "a-2",
+            "pic": "picture-02",
             "detail": "左边说的对"
         },
         {
-            "pic": "a-3",
+            "pic": "picture-03",
             "detail": "同意的顶"
         },
         {
-            "pic": "a-4",
+            "pic": "picture-04",
             "detail": "同意"
         }],
         [{
-            "pic": "a-5",
+            "pic": "picture-05",
             "detail": "owe牛逼"
         },
         {
-            "pic": "a-6",
+            "pic": "picture-06",
             "detail": "阳阳牛逼"
         },
         {
-            "pic": "a-7",
+            "pic": "picture-07",
             "detail": "老板牛逼"
         },
         {
-            "pic": "a-8",
+            "pic": "picture-08",
             "detail": "潘勇傻逼"
         }]
     ]
