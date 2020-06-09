@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="header">
         <div class="logo">
             <svg class="svg" viewBox="0 0 86 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->

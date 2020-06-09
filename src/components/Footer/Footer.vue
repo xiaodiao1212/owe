@@ -15,7 +15,7 @@ export default class Footer extends Vue {}
 .footer {
     // position: absolute;
     // bottom: 0;
-    left: 50%;
+    // left: 50%;
     height: 17px;
     color: #000000;
     font-size: 12px;

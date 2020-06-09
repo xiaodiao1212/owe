@@ -39,18 +39,21 @@ export default class Home extends Vue {}
 	max-width: 1440px;
 	margin: 0 auto;
 	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+	position: relative;
 }
 .header {
 	box-sizing: content-box;
 	line-height: 33px;
 	height: 33px !important;
 }
-.footer {
+.el-footer {
 	position: absolute;
-	bottom: 60px;
+	bottom: 0;
 	left: 50%;
 	-webkit-transform: translate(-50%, 0);
 	transform: translate(-50%, 0);
+	line-height: 60px;
+	height: auto;
 }
 </style>
 

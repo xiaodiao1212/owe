@@ -131,9 +131,10 @@ export default class Content extends Vue {
     text-align: left;
     padding-top: 100px;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    margin-bottom: 30px;
     p.title {
         color: #4A4A4A;
-        font-size: 2rem;
+        font-size: 48px;
         line-height: 48px;
         margin-bottom: 20px;
         span:first-child {
@@ -156,7 +157,7 @@ export default class Content extends Vue {
     .el-carousel {
       // margin-top: 40px;
       .el-carousel__container {
-        height: 590px;
+        height: 570px;
       }
       .el-carousel__item {
         display: grid;
@@ -165,20 +166,19 @@ export default class Content extends Vue {
         // grid-template-columns: repeat(4, 1fr);
         grid-template-columns: 25% 25% 25% 25%;
         grid-auto-rows: auto;
-        grid-gap: 10px 0;
+        grid-gap: 0 0;
         justify-items: center;
         align-items: center;
         // display: flex;
         // flex-wrap: wrap;
         // justify-content: space-between;
         .image-container {
-          transition:All 0.4s linear;
-          -webkit-transition:All 0.4s linear;
-          -moz-transition:All 0.4s linear;
-          -o-transition:All 0.4s linear;
+          transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+          -webkit-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+          -moz-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+          -o-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
           padding: 10px 10px 0 10px;
           cursor: pointer;
-          border-radius: 8px 8px 0 0;
           text-align: center;
           p {
              visibility: hidden;
@@ -191,11 +191,11 @@ export default class Content extends Vue {
              text-align: left;
           }
           .el-image {
-            width: 330px;
+            min-width: 296px;
+            max-width: 326px;
             height: auto;
             cursor: pointer;
             padding: 0;
-            border-radius: 6px 6px 0 0;
             // padding-bottom: 30px;
           }
           &:hover {

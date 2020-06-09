@@ -49,7 +49,7 @@ export default class Detail extends Vue {
   private beforeMount() {
     const { title, describe, order } = this.$route.query;
     this.title = title;
-    this.describe = describe
+    this.describe = describe;
     this.image = require(`assets/about/${order}.jpg`);
   }
 }
@@ -72,6 +72,9 @@ export default class Detail extends Vue {
     }
 }
 .breadcrumb {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 48px;
     a {
         vertical-align: bottom;
         height: 22px;
@@ -80,6 +83,11 @@ export default class Detail extends Vue {
         margin-right: 10px;
         cursor: pointer;
     }
+    span {
+        font-size: 16px;
+        color: #000;
+        line-height: 16px;
+    }
 }
 .header {
     h3 {
@@ -87,15 +95,18 @@ export default class Detail extends Vue {
         font-size: 48px;
         color: #4A4A4A;
         line-height: 67px;
+        margin: 0;
+        margin-bottom: 20px;
     }
     p {
         font-size: 20px;
         line-height: 20px;
         color: #000000;
+        margin: 0;
     }
 }
 .images {
-    margin-top: 30px;
+    margin-top: 110px;
     width: 100%;
 }
 </style>

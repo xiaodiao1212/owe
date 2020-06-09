@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="about">
 	<el-container class="container">
 		<el-header class="header">
 			<Header></Header>
@@ -8,7 +8,7 @@
 			<Detail></Detail>
 		</el-main>
 		<el-footer>
-			<Footer class="footer"></Footer>
+			<Footer></Footer>
 		</el-footer>
 	</el-container>
 
@@ -31,7 +31,7 @@ import Footer from '@/components/Footer/Footer.vue';
 		Footer,
 	},
 })
-export default class Home extends Vue {}
+export default class About extends Vue {}
 </script>
 
 <style scoped lang="less">
@@ -39,19 +39,13 @@ export default class Home extends Vue {}
 	min-width: 1280px;
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 0 200px;
 	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
-.el-main {
-	padding: 0;
-}
+
 .header {
 	box-sizing: content-box;
 	line-height: 33px;
 	height: 33px !important;
-}
-.footer {
-	margin: 50px 0;
 }
 </style>
 
