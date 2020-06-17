@@ -24,7 +24,9 @@
             <h3>{{title}}</h3>
             <p>{{describe || ' '}}</p>
         </div>
-        <el-image class="images" :fit="'contain'" :src="image"></el-image>
+        <div class="image-lazy">
+            <el-image v-for="(item, index) in 4" :key="index" class="images" :fit="'contain'" :src="`${image}-${item + 1}.png`" lazy></el-image>
+        </div>
     </div>
 
 </template>
@@ -50,7 +52,7 @@ export default class Detail extends Vue {
     const { title, describe, order } = this.$route.query;
     this.title = title;
     this.describe = describe;
-    this.image = require(`assets/about/${order}.jpg`);
+    this.image = `http://qbnqxuuz9.bkt.clouddn.com/${order}`;
   }
 }
 
@@ -105,8 +107,12 @@ export default class Detail extends Vue {
         margin: 0;
     }
 }
-.images {
+.image-lazy {
     margin-top: 110px;
     width: 100%;
+    .images {
+        width: 100%;
+        overflow: inherit;
+    }
 }
 </style>
