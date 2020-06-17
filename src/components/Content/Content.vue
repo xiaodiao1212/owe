@@ -10,6 +10,9 @@
         <!-- <div class="img-list"> -->
           <div class="image-container" v-for="image in item" :key="image.name">
             <el-image @click="goToInfo(image)" :fit="'contain'" :src="image.url">
+              <div slot="placeholder" class="image-slot">
+                加载中<span class="dot">...</span>
+              </div>
             </el-image>
             <p>{{image.title}}</p>
           </div>
@@ -197,6 +200,10 @@ export default class Content extends Vue {
             cursor: pointer;
             padding: 0;
             // padding-bottom: 30px;
+            .image-slot {
+              font-size: 14px;
+              text-align: center;
+            }
           }
           &:hover {
             // transform-origin:50% 50%;

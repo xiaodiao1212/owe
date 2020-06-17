@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-	<el-container class="container">
+  <div class="about container">
+	<el-container>
 		<el-header class="header">
 			<Header></Header>
 		</el-header>
@@ -41,11 +41,15 @@ export default class About extends Vue {}
 	margin: 0 auto;
 	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
-
+.el-container {
+	position: relative;
+	height: 100%;
+}
 .header {
 	box-sizing: content-box;
 	line-height: 33px;
 	height: 33px !important;
+	margin-top: 35px;
 }
 </style>
 

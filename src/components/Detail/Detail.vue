@@ -25,7 +25,11 @@
             <p>{{describe || ' '}}</p>
         </div>
         <div class="image-lazy">
-            <el-image v-for="(item, index) in 4" :key="index" class="images" :fit="'contain'" :src="`${image}-${item + 1}.png`" lazy></el-image>
+            <el-image v-for="(item, index) in 4" :key="index" class="images" :fit="'contain'" :src="`${image}-${item + 1}.png`" :lazy="true">
+                <div slot="placeholder" class="image-slot">
+                    加载中<span class="dot">...</span>
+                </div>
+            </el-image>
         </div>
     </div>
 
@@ -113,6 +117,14 @@ export default class Detail extends Vue {
     .images {
         width: 100%;
         overflow: inherit;
+        .image-slot {
+            width: 100%;
+            text-align: center;
+            min-height: 600px;
+            font-size: 16px;
+            color: #4A4A4A;
+        }
     }
+    
 }
 </style>
