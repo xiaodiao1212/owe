@@ -11,13 +11,17 @@ export default {
 </script>
 
 <style>
-html {
+html{
   height: 100%;
 }
-body {
+body{
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
+  position:relative;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -27,7 +31,6 @@ body {
   color: #2c3e50;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 p {
   margin: 0;

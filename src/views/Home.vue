@@ -1,18 +1,8 @@
 <template>
   <div class="home container">
-	<el-container>
-		<el-header class="header">
-			<Header></Header>
-		</el-header>
-		<el-main>
-			<Content></Content>
-		</el-main>
-		<el-footer>
-			<Footer></Footer>
-		</el-footer>
-	</el-container>
-    <!-- wosjozhjaooi
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
+	<Header></Header>
+	<Content></Content>
+	<Footer></Footer>
   </div>
 </template>
 
@@ -39,27 +29,6 @@ export default class Home extends Vue {}
 	max-width: 1440px;
 	margin: 0 auto;
 	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-	position: relative;
-	height: 100%;
-}
-.el-container {
-	position: relative;
-	height: 100%;
-}
-.header {
-	box-sizing: content-box;
-	line-height: 33px;
-	height: 33px !important;
-	margin-top: 35px;
-}
-.el-footer {
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	-webkit-transform: translate(-50%, 0);
-	transform: translate(-50%, 0);
-	line-height: 60px;
-	height: auto;
 }
 </style>
 

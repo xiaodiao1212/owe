@@ -1,23 +1,25 @@
 <template>
   <div class="content">
     <p class="title"><span>We can do </span><span>Graphic Artist Design.</span></p>
-    <p class="detail">用心做好每一个细节。</p>
+    <p class="detail">用心做好每一个设计细节。</p>
     <!-- <div class="img-list">
       <el-image v-for="url in urls" :key="url" :src="`${url}`" lazy></el-image>
     </div> -->
-    <el-carousel ref="carousel" :interval="5000" arrow="never" indicator-position="none" :autoplay="false">
-      <el-carousel-item v-for="(item, index) in carousel" :key="index">
-        <!-- <div class="img-list"> -->
-          <div class="image-container" v-for="image in item" :key="image.name">
-            <el-image @click="goToInfo(image)" fit="contain" :src="image.url">
-              <div slot="placeholder" class="image-slot">
-                加载中<span class="dot">...</span>
-              </div>
-            </el-image>
-            <p>{{image.title}}</p>
-          </div>
-        <!-- </div> -->
-      </el-carousel-item>
+    <div class="carousel-container">
+      <el-carousel ref="carousel" :interval="5000" arrow="never" :initial-index="index" indicator-position="none" :autoplay="false">
+        <el-carousel-item v-for="(item, index) in carousel" :key="index">
+          <!-- <div class="img-list"> -->
+            <div class="image-container" v-for="image in item" :key="image.name">
+              <el-image @click="goToInfo(image)" fit="contain" :src="image.url">
+                <div slot="placeholder" class="image-slot">
+                  加载中<span class="dot">...</span>
+                </div>
+              </el-image>
+              <p>{{image.title}}</p>
+            </div>
+          <!-- </div> -->
+        </el-carousel-item>
+      </el-carousel>
       <div class="carousel-arrow carousel-left-arrow" @click="carouselSet('prev')">
         <el-image fit="contain" class="normal" :src="leftNormal"></el-image>
         <el-image fit="contain" class="hover" :src="leftHover"></el-image>
@@ -26,7 +28,7 @@
         <el-image fit="contain" class="normal" :src="rightNormal"></el-image>
         <el-image fit="contain" class="hover" :src="rightHover"></el-image>
       </div>
-    </el-carousel>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -37,20 +39,18 @@ import { Component, Vue } from 'vue-property-decorator';
 	props: {},
 	components: {},
 })
-
 export default class Content extends Vue {
-
-  $refs!: {
+  public $refs!: {
     carousel: HTMLElement,
     cellList: any,
-  }
+  };
 
-  private leftNormal = require('@/assets/left_normal.png')
-  private rightNormal = require('@/assets/right_normal.png')
-  private leftHover = require('@/assets/left_hover.png')
-  private rightHover = require('@/assets/right_hover.png')
-	// public rows = r.default.data;
-  public canShow = false;
+  private leftNormal = require('@/assets/arrow_left_normal.png');
+  private rightNormal = require('@/assets/arrow_right_normal.png');
+  private leftHover = require('@/assets/arrow_left_hover.png');
+  private rightHover = require('@/assets/arrow_right_hover.png');
+  private index = -1;
+  private canShow = false;
   private carousel = [
     [
       {
@@ -136,6 +136,10 @@ export default class Content extends Vue {
     ],
   ];
 
+  private mounted() {
+    this.index = this.$store.state.sliceIndex;
+  }
+
   private goToInfo(image: any) {
     delete image.url;
     this.$router.push({
@@ -144,8 +148,9 @@ export default class Content extends Vue {
     });
   }
 
-  private carouselSet (func: string) {
-    (this.$refs.carousel as any)[func]()
+  private carouselSet(func: string) {
+    (this.$refs.carousel as any)[func]();
+    this.$store.dispatch('SETINDEX', (this.$refs.carousel as any).activeIndex);
   }
 
 }
@@ -156,9 +161,9 @@ export default class Content extends Vue {
     text-align: left;
     padding-top: 100px;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     p.title {
-        color: #4A4A4A;
+        color: #28292b;
         font-size: 48px;
         line-height: 48px;
         margin-bottom: 20px;
@@ -174,10 +179,46 @@ export default class Content extends Vue {
     }
     .detail {
         font-size: 20px;
-        color: #000000;
+        color: #28292b;
         opacity: 0.8;
         line-height: 20px;
         margin-bottom: 100px;
+    }
+    .carousel-container {
+      position: relative;
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        width: 12px;
+        cursor: pointer;
+        .el-image {
+          width: 100%;
+          position: absolute;
+          -webkit-transform: translate(0, -80%);
+          transform: translate(0, -80%);
+        }
+        &:hover {
+          .el-image {
+            transition: opacity .3s;
+          }
+          .normal {
+            opacity: 0;
+          }
+          .hover {
+            opacity: 1;
+          }
+        }
+        .hover {
+          opacity: 0;
+        }
+      }
+      .carousel-left-arrow {
+        left: -20px;
+      }
+      .carousel-right-arrow {
+        right: -20px;
+      }
     }
     .el-carousel {
       // margin-top: 40px;
@@ -211,9 +252,9 @@ export default class Content extends Vue {
              padding: 0;
              color: #fff;
              font-size: 14px;
-             padding: 2px 0;
-             height: 18px;
+             height: 24px;
              text-align: left;
+             line-height: 22px;
           }
           .el-image {
             min-width: 296px;
@@ -241,35 +282,6 @@ export default class Content extends Vue {
           }
         }
         
-      }
-      .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        z-index: 100;
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-        width: 10px;
-        cursor: pointer;
-        .el-image {
-          width: 100%;
-        }
-        &:hover {
-          .normal {
-            display: none;
-          }
-          .hover {
-            display: inherit;
-          }
-        }
-        .hover {
-          display: none;
-        }
-      }
-      .carousel-left-arrow {
-        left: 0;
-      }
-      .carousel-right-arrow {
-        right: 0;
       }
     }
     // .img-list {

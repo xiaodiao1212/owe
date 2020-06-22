@@ -7,7 +7,7 @@
                     <desc>Created with Sketch.</desc>
                     <defs></defs>
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g id="作品展示" transform="translate(-198.000000, -123.000000)" stroke="#000000">
+                        <g id="作品展示" transform="translate(-198.000000, -123.000000)" stroke="#28292b">
                             <g id="路径" transform="translate(200.000000, 123.000000)">
                                 <g id="Group">
                                     <rect id="Rectangle-2" x="0.5" y="10.5" width="39" height="1"></rect>
@@ -25,7 +25,7 @@
             <p>{{describe || ' '}}</p>
         </div>
         <div class="image-lazy">
-            <el-image v-for="(item, index) in 4" :key="index" class="images" :fit="'contain'" :src="`${image}-${item + 1}.png`" :lazy="true">
+            <el-image v-for="(item, index) in 5" :key="index" class="images" :fit="'contain'" :src="`${image}-${item}.png`" :lazy="true">
                 <div slot="placeholder" class="image-slot">
                     加载中<span class="dot">...</span>
                 </div>
@@ -64,18 +64,7 @@ export default class Detail extends Vue {
 <style lang="less" scoped>
 .content {
     text-align: left;
-    padding-top: 100px;
-    p:first-child {
-        color: #4A4A4A;
-        font-size: 48px;
-        line-height: 48px;
-        margin-bottom: 20px;
-    }
-    .detail {
-        font-size: 20px;
-        color: #000000;
-        line-height: 20px;
-    }
+    padding: 100px 0 60px;
 }
 .breadcrumb {
     margin: 0;
@@ -88,10 +77,11 @@ export default class Detail extends Vue {
         width: 42px;
         margin-right: 10px;
         cursor: pointer;
+        opacity: 0.8;
     }
     span {
         font-size: 16px;
-        color: #000;
+        color: #28292b;
         line-height: 16px;
     }
 }
@@ -99,7 +89,7 @@ export default class Detail extends Vue {
     h3 {
         height: 67px;
         font-size: 48px;
-        color: #4A4A4A;
+        color: #28292b;
         line-height: 67px;
         margin: 0;
         margin-bottom: 20px;
@@ -107,7 +97,7 @@ export default class Detail extends Vue {
     p {
         font-size: 20px;
         line-height: 20px;
-        color: #000000;
+        color: #535455;
         margin: 0;
     }
 }

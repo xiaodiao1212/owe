@@ -1,8 +1,8 @@
 <template>
-    <div class="header">
-        <div class="logo">
+  <div class="header">
+    <!-- <div class="logo">
             <svg class="svg" viewBox="0 0 86 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+                Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch
                 <desc>Created with Sketch.</desc>
                 <defs></defs>
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -24,106 +24,131 @@
             <p class="footer">
                 Design Studio
             </p>
-        </div>
-        <div class="contact">
-            <div @mouseover="showQr = true" @mouseout="showQr = false" class="contact-container">
-                <template v-if="!showQr">
-                    <p>Contact Us</p>
-                </template>
-                <template v-if="showQr">
-                    <div class="qrcode">
-                        <p>微信扫码，我们一起探讨设计</p>
-                        <el-image
-                            style="width: 100px; height: 100px"
-                            :src="young"
-                            :fit="'contain'"></el-image>
-                    </div>
-                </template>
-                
-            </div>
-        </div>
+    </div>-->
+    <div class="logo">
+      <router-link to="/home">
+        <el-image
+          :fit="'contain'"
+          :src="logo"
+          :lazy="true"
+        >
+          <div slot="placeholder" class="image-slot">
+            加载中
+            <span class="dot">...</span>
+          </div>
+        </el-image>
+      </router-link>
     </div>
+    <div class="contact">
+      <div @mouseover="showQr = true" @mouseout="showQr = false" class="contact-container">
+        <template v-if="!showQr">
+          <p>Contact Us</p>
+        </template>
+        <template v-if="showQr">
+          <div class="qrcode">
+            <p>微信扫码，我们一起探讨设计</p>
+            <el-image style="width: 100px; height: 100px" :src="young" :fit="'contain'"></el-image>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Header extends Vue {
-    private young = require('assets/young.png');
-    private showQr = false;
+  private logo = require('@/assets/logo.png');
+  private young = require("assets/young.png");
+  private showQr = false;
   // private young = image;
   // @Prop() private msg!: string;
 }
 </script>
 <style lang="less" scoped>
-.logo, .logo-detail {
-    float: left;
-    svg {
-        width: 86px;
-        height: 33px;
-    }
+.header {
+  box-sizing: content-box;
+	line-height: 33px;
+  height: 33px !important;
+  width: 100%;
+  padding-top: 35px;
 }
+// .logo,
+// .logo-detail {
+//   float: left;
+//   svg {
+//     width: 86px;
+//     height: 33px;
+//   }
+// }
+// .logo {
+//   margin-right: 10px;
+//   cursor: pointer;
+// }
+// .logo-detail {
+//   p {
+//     margin: 0;
+//     font-size: 14px;
+//     text-align: left;
+//   }
+//   p.header {
+//     color: #ff8000;
+//     height: 20px;
+//     line-height: 20px;
+//   }
+//   p.footer {
+//     color: #b0b0b0;
+//     font-size: 12px;
+//     line-height: 5px;
+//     height: 13px;
+//   }
+// }
 .logo {
-    margin-right: 10px;
-}
-.logo-detail {
-    p {
-        margin: 0;
-        font-size: 14px;
-        text-align: left;
-    }
-    p.header {
-        color: #FF8000;
-        height: 20px;
-        line-height: 20px;
-        
-    }
-    p.footer {
-        color: #B0B0B0;
-        font-size: 12px;
-        line-height: 5px;
-        height: 13px;
-    }
+  float: left;
+  cursor: pointer;
+  .el-image {
+    height: 33px;
+  }
 }
 .contact {
-    float: right;
-    div.contact-container {
-        cursor: pointer;
-        position: relative;
-        >p {
-            margin: 0;
-            font-size: 14px;
-            text-align: left;
-            color: #4A4A4A;
-            font-size: 16px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: all 0.1s linear;
-        }
-        .qrcode {
-            position: absolute;
-            transition: all 0.1s linear;
-            right: 0;
-            top: 0;
-            width: 200px;
-            height: 200px;
-            p {
-                font-size: 12px;
-                color: #4A4A4A;
-                width: 100%;
-            }
-        }
-        // &:hover {
-        //     >p {
-        //         opacity: 0;
-        //         transition: all 0.5s linear;
-        //     }
-        //     .qrcode {
-        //         opacity: 1;
-        //         transition: all 0.5s linear;
-        //     }
-        // }
+  float: right;
+  div.contact-container {
+    cursor: pointer;
+    position: relative;
+    > p {
+      font-family: PingFangSC-Light;
+      font-size: 16px;
+      color: #4a4a4a;
+      letter-spacing: 0;
+      text-align: right;
+      margin: 0;
+      cursor: pointer;
+      opacity: 0.6;
     }
+    .qrcode {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      p {
+        font-size: 12px;
+        color: #4a4a4a;
+        width: 100%;
+      }
+    }
+    &:hover {
+      > p {
+        opacity: 0;
+        transition: all 2s linear;
+      }
+      .qrcode {
+        opacity: 1;
+        transition: all 2s linear;
+      }
+    }
+  }
 }
 </style>

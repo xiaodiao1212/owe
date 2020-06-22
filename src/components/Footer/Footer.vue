@@ -13,13 +13,15 @@ export default class Footer extends Vue {}
 </script>
 <style lang="less" scoped>
 .footer {
-    // position: absolute;
-    // bottom: 0;
-    // left: 50%;
+    position: absolute;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
     height: 17px;
     color: #000000;
     font-size: 12px;
-    // transform: translate(-50%, -300%);
     opacity: 0.4;
+    padding-bottom: 10px;
 }
 </style>
