@@ -3,14 +3,10 @@
     <div class="title">
       <span class="before-text">We can do </span>
       <!-- <div v-for="(item, index) in loopTextArry" :key="index"  class="loop-container"> -->
-
         <transition
         v-for="(item, index) in loopTextArry" :key="index"
-        enter-active-class="animated bounceIn"
-        leave-active-class="animated bounceOut"
-        class="loop-container"
         name="loop">
-          <span v-if="index === loopTextIndex" class="loop-text">{{item}}.</span>
+          <span v-if="index == loopTextIndex" class="loop-text">{{item}}.</span>
         </transition>
       <!-- </div> -->
     </div>
@@ -163,7 +159,7 @@ export default class Content extends Vue {
     this.index = this.$store.state.sliceIndex;
     this.handle = setInterval(() => {
       this.loopTextFun();
-    }, 10000);
+    }, 3000);
   }
 
   private destroyed() {
@@ -171,11 +167,7 @@ export default class Content extends Vue {
   }
 
   private loopTextFun() {
-    if (this.loopTextIndex === 4) {
-      this.loopTextIndex = 0;
-      return false;
-    }
-    this.loopTextIndex++;
+    this.loopTextIndex = this.loopTextIndex === 4 ? 0 : this.loopTextIndex + 1;
   }
   private goToInfo(image: any) {
     delete image.url;
@@ -221,37 +213,37 @@ export default class Content extends Vue {
             font-family: Georgia;
             text-decoration: underline;
             opacity: 1;
-            transition: all 1s ease;
         }
         // .loop-enter-active, .loop-leave-active{
-        //   transition: all 5s ease;
+        //   transition: all 4s ease;
+        //   opacity: 0;
         // }
         // .loop-enter, .loop-leave-to {           
-        //   opacity: 0;
+        //   opacity: 1;
         // }
         .loop-enter {
            transition: all 1s ease;
            opacity: 0;
         }
         .loop-enter-active {
-          opacity: 1;
+          opacity: 0;
           transition: all 1s ease;
         }
         .loop-enter-to {
-          opacity: 0;
-          transition: all 1s ease;
+          opacity: 1;
+          // transition: all 1s ease;
         }
         .loop-leave {
           opacity: 0;
-          transition: all 1s ease;
+          // transition: all 1s ease;
         }
         .loop-leave-active  {
-          opacity: 1;
-          transition: all 1s ease;
+          opacity: 0;
+          // transition: all 0.5s ease;
         }
         .loop-leave-to {
           opacity: 0;
-          transition: all 1s ease;
+          // transition: all 0.5s ease;
         }
     }
     .detail {

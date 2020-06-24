@@ -77,12 +77,14 @@ export default class Detail extends Vue {
         width: 42px;
         margin-right: 10px;
         cursor: pointer;
-        opacity: 0.8;
+        &:hover {
+            opacity: 0.6;
+        }
     }
     span {
-        font-size: 16px;
+        font-size: 20px;
         color: #28292b;
-        line-height: 16px;
+        line-height: 20px;
     }
 }
 .header {
