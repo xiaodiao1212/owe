@@ -1131,6 +1131,10 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "http://192.168.14.11:8888/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
+animate.css@^4.1.0:
+  version "4.1.0"
+  resolved "http://192.168.14.11:8888/animate.css/-/animate.css-4.1.0.tgz#dec2aabe4babfc6f6777f9a5cccd132838729b50"
+
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "http://192.168.14.11:8888/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"

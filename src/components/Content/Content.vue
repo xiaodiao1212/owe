@@ -1,6 +1,19 @@
 <template>
   <div class="content">
-    <p class="title"><span>We can do </span><span>Graphic Artist Design.</span></p>
+    <div class="title">
+      <span class="before-text">We can do </span>
+      <!-- <div v-for="(item, index) in loopTextArry" :key="index"  class="loop-container"> -->
+
+        <transition
+        v-for="(item, index) in loopTextArry" :key="index"
+        enter-active-class="animated bounceIn"
+        leave-active-class="animated bounceOut"
+        class="loop-container"
+        name="loop">
+          <span v-if="index === loopTextIndex" class="loop-text">{{item}}.</span>
+        </transition>
+      <!-- </div> -->
+    </div>
     <p class="detail">用心做好每一个设计细节。</p>
     <!-- <div class="img-list">
       <el-image v-for="url in urls" :key="url" :src="`${url}`" lazy></el-image>
@@ -135,11 +148,35 @@ export default class Content extends Vue {
       },
     ],
   ];
+  private show = true;
+  private loopTextArry = [
+    'User Interface Design',
+    'Website Design',
+    'Icon Design',
+    'Animation Design',
+    'Graphic Design',
+  ];
+  private loopTextIndex = 0;
+  private handle: any = null;
 
   private mounted() {
     this.index = this.$store.state.sliceIndex;
+    this.handle = setInterval(() => {
+      this.loopTextFun();
+    }, 10000);
   }
 
+  private destroyed() {
+    clearInterval(this.handle);
+  }
+
+  private loopTextFun() {
+    if (this.loopTextIndex === 4) {
+      this.loopTextIndex = 0;
+      return false;
+    }
+    this.loopTextIndex++;
+  }
   private goToInfo(image: any) {
     delete image.url;
     this.$router.push({
@@ -157,24 +194,64 @@ export default class Content extends Vue {
 
 </script>
 <style lang="less">
+
 .content {
     text-align: left;
     padding-top: 100px;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     padding-bottom: 30px;
-    p.title {
+    .title {
         color: #28292b;
         font-size: 48px;
         line-height: 48px;
         margin-bottom: 20px;
-        span:first-child {
+        .before-text {
             opacity: 0.8;
             font-weight: normal;
+            // vertical-align: middle;
         }
-        span:last-child {
+        .loop-container {
+          position: relative;
+          width: 80%;
+          display: inline-block;
+          height: 40px;
+          // vertical-align: middle;
+        }
+        .loop-text {
             font-family: Georgia;
             text-decoration: underline;
-            opacity: initial;
+            opacity: 1;
+            transition: all 1s ease;
+        }
+        // .loop-enter-active, .loop-leave-active{
+        //   transition: all 5s ease;
+        // }
+        // .loop-enter, .loop-leave-to {           
+        //   opacity: 0;
+        // }
+        .loop-enter {
+           transition: all 1s ease;
+           opacity: 0;
+        }
+        .loop-enter-active {
+          opacity: 1;
+          transition: all 1s ease;
+        }
+        .loop-enter-to {
+          opacity: 0;
+          transition: all 1s ease;
+        }
+        .loop-leave {
+          opacity: 0;
+          transition: all 1s ease;
+        }
+        .loop-leave-active  {
+          opacity: 1;
+          transition: all 1s ease;
+        }
+        .loop-leave-to {
+          opacity: 0;
+          transition: all 1s ease;
         }
     }
     .detail {

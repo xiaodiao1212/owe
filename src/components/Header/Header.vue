@@ -56,12 +56,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Header extends Vue {
   private logo = require('@/assets/logo.png');
-  private young = require("assets/young.png");
+  private young = require('@/assets/young.png');
   private showQr = false;
   // private young = image;
   // @Prop() private msg!: string;

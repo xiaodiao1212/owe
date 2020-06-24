@@ -5,6 +5,8 @@ import ElementUI from 'element-ui';
 // import Swiper from "swiper";
 import './utils/rem.ts';
 
+// import animate from 'animate.css';
+
 
 
 
@@ -18,6 +20,8 @@ import './styles/index.less';
 Vue.config.productionTip = false;
 
 Vue.use(ElementUI);
+
+// Vue.use(animate);
 // Vue.use(VueAwesomeSwiper);
 
 new Vue({
