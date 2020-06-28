@@ -59,9 +59,9 @@ export default class Detail extends Vue {
     this.image = `http://qbnqxuuz9.bkt.clouddn.com/${order}`;
   }
 }
-
 </script>
 <style lang="less" scoped>
+@import "./../../styles/index.less";
 .content {
     text-align: left;
     padding: 100px 0 60px;
@@ -83,7 +83,7 @@ export default class Detail extends Vue {
     }
     span {
         font-size: 20px;
-        color: #28292b;
+        color: @color;
         line-height: 20px;
     }
 }
@@ -91,7 +91,7 @@ export default class Detail extends Vue {
     h3 {
         height: 67px;
         font-size: 48px;
-        color: #28292b;
+        color: @color;
         line-height: 67px;
         margin: 0;
         margin-bottom: 20px;
@@ -99,7 +99,7 @@ export default class Detail extends Vue {
     p {
         font-size: 20px;
         line-height: 20px;
-        color: #535455;
+        color: @color-text;
         margin: 0;
     }
 }

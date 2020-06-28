@@ -65,7 +65,9 @@ export default class Header extends Vue {
   private young = require('@/assets/young.png');
 }
 </script>
+
 <style lang="less" scoped>
+@import "./../../styles/index.less";
 .header {
   box-sizing: content-box;
   height: 33px !important;
@@ -120,22 +122,21 @@ export default class Header extends Vue {
     > p {
       font-family: PingFangSC-Light;
       font-size: 16px;
-      color: #4a4a4a;
+      color: @color-text;
       letter-spacing: 0;
       text-align: right;
       margin: 0;
       cursor: pointer;
-      opacity: 0.6;
     }
     .qrcode {
       display: none;
-      transition: all 2s ease;
       p {
         font-family: PingFangSC-Light;
         font-size: 16px;
-        color: #4A4A4A;
-        margin: 0;
+        color: @color-text;
+        margin: 0 0 5px 0;
         padding: 0;
+
       }
       .image-container {
         width: 235px;

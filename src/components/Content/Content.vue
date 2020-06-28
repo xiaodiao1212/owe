@@ -183,24 +183,22 @@ export default class Content extends Vue {
   }
 
 }
-
 </script>
-<style lang="less">
 
+<style lang="less">
+@import "./../../styles/index.less";
 .content {
     text-align: left;
     padding-top: 100px;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     padding-bottom: 30px;
     .title {
-        color: #28292b;
         font-size: 48px;
         line-height: 48px;
         margin-bottom: 20px;
         .before-text {
-            opacity: 0.8;
-            font-weight: normal;
-            // vertical-align: middle;
+          font-weight: normal;
+          color: @color-text;
         }
         .loop-container {
           position: relative;
@@ -213,6 +211,7 @@ export default class Content extends Vue {
             font-family: Georgia;
             text-decoration: underline;
             opacity: 1;
+            color: @color;
         }
         // .loop-enter-active, .loop-leave-active{
         //   transition: all 4s ease;
