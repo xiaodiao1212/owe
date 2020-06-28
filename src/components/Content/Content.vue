@@ -42,6 +42,9 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { State, Action, Getter } from 'vuex-class';
+import { ProfileState, User } from './../../store/profile/types';
+const namespace: string = 'profile';
 // import leftNormal from '@/assets/left_normal.png';
 // import * as r from './../../static/picture.json';
 @Component({
@@ -49,6 +52,12 @@ import { Component, Vue } from 'vue-property-decorator';
 	components: {},
 })
 export default class Content extends Vue {
+  @State('profile') profile: ProfileState = {
+    error: false
+  };
+  @Action('fetchData', { namespace }) fetchData: any;
+  @Getter('fullName', { namespace }) fullName: string = '';
+
   public $refs!: {
     carousel: HTMLElement,
     cellList: any,
@@ -155,8 +164,10 @@ export default class Content extends Vue {
   private loopTextIndex = 0;
   private handle: any = null;
 
-  private mounted() {
-    this.index = this.$store.state.sliceIndex;
+
+  private async mounted() {
+    await this.fetchData();
+    // this.index = this.$store.state.sliceIndex;
     this.handle = setInterval(() => {
       this.loopTextFun();
     }, 3000);
@@ -179,7 +190,7 @@ export default class Content extends Vue {
 
   private carouselSet(func: string) {
     (this.$refs.carousel as any)[func]();
-    this.$store.dispatch('SETINDEX', (this.$refs.carousel as any).activeIndex);
+    // this.$store.dispatch('SETINDEX', (this.$refs.carousel as any).activeIndex);
   }
 
 }
