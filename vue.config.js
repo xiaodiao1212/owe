@@ -8,9 +8,9 @@ const postcss = pxtorem({
   unitPrecision: 5,
   propList: ['*'],
   // selectorBlackList: [/^p/],
-  selectorBlackList: [],
+  selectorBlackList: ['layout'],
   replace: true,
-  mediaQuery: false,
+  mediaQuery: true,
   minPixelValue: 6
 })
 
@@ -22,7 +22,6 @@ const utils = {
     return path.posix.join('', _path)
   }
 }
-console.log('这是url', utils.resolve('src/assets'))
 // 允许对内部的 webpack 配置进行更细粒度的修改。
 const chainWebpack = config => {
   // 命名

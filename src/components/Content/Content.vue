@@ -282,10 +282,10 @@ export default class Content extends Vue {
         }
       }
       .carousel-left-arrow {
-        left: -20px;
+        left: 0;
       }
       .carousel-right-arrow {
-        right: -20px;
+        right: 0;
       }
     }
     .el-carousel {
@@ -294,18 +294,10 @@ export default class Content extends Vue {
         height: 570px;
       }
       .el-carousel__item {
-        display: grid;
         box-sizing: border-box;
-        // justify-content: space-between;
-        // grid-template-columns: repeat(4, 1fr);
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-auto-rows: auto;
-        grid-gap: 0 0;
-        justify-items: center;
-        align-items: center;
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         .image-container {
           transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
           -webkit-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
@@ -325,8 +317,7 @@ export default class Content extends Vue {
              line-height: 22px;
           }
           .el-image {
-            min-width: 296px;
-            max-width: 326px;
+            width: 316px;
             height: auto;
             cursor: pointer;
             padding: 0;
@@ -351,6 +342,65 @@ export default class Content extends Vue {
         }
         
       }
+      // 下面是grid布局，很多浏览器不兼容，唉～
+      // .el-carousel__item {
+      //   display: grid;
+      //   box-sizing: border-box;
+      //   // justify-content: space-between;
+      //   // grid-template-columns: repeat(4, 1fr);
+      //   grid-template-columns: 25% 25% 25% 25%;
+      //   grid-auto-rows: auto;
+      //   grid-gap: 0 0;
+      //   justify-items: center;
+      //   align-items: center;
+      //   // display: flex;
+      //   // flex-wrap: wrap;
+      //   // justify-content: space-between;
+      //   .image-container {
+      //     transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+      //     -webkit-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+      //     -moz-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+      //     -o-transition:All 0.6s cubic-bezier(0.45, 0.25, 0.60, 0.95);
+      //     padding: 10px 10px 0 10px;
+      //     cursor: pointer;
+      //     text-align: center;
+      //     p {
+      //        visibility: hidden;
+      //        margin: 0;
+      //        padding: 0;
+      //        color: #fff;
+      //        font-size: 14px;
+      //        height: 24px;
+      //        text-align: left;
+      //        line-height: 22px;
+      //     }
+      //     .el-image {
+      //       min-width: 296px;
+      //       max-width: 326px;
+      //       height: auto;
+      //       cursor: pointer;
+      //       padding: 0;
+      //       // padding-bottom: 30px;
+      //       .image-slot {
+      //         font-size: 14px;
+      //         text-align: center;
+      //       }
+      //     }
+      //     &:hover {
+      //       // transform-origin:50% 50%;
+      //       // transform:scale(1.05, 1.1);
+      //       // -webkit-transform:scale(1.05, 1.1);
+      //       // -moz-transform:scale(1.05, 1.1);
+      //       // -o-transform:scale(1.05, 1.1);
+      //       // -ms-transform:scale(1.05, 1.1);
+      //       background-color: black;
+      //       p {
+      //         visibility: visible;
+      //       }
+      //     }
+      //   }
+        
+      // }
     }
     // .img-list {
     //     display: grid;

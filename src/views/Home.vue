@@ -25,10 +25,12 @@ export default class Home extends Vue {}
 
 <style scoped lang="less">
 .container {
-	min-width: 1280px;
-	max-width: 1440px;
+	width: 100%;
 	margin: 0 auto;
 	font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+.header, .content {
+	width: 100%;
 }
 </style>
 

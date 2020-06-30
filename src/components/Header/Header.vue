@@ -71,7 +71,6 @@ export default class Header extends Vue {
 .header {
   box-sizing: content-box;
   height: 33px !important;
-  width: 100%;
   padding-top: 35px;
 }
 .logo,

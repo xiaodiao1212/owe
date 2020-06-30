@@ -4,6 +4,7 @@ import ElementUI from 'element-ui';
 // import VueAwesomeSwiper from 'vue-awesome-swiper';
 // import Swiper from "swiper";
 import './utils/rem.ts';
+// import 'lib-flexible';
 
 // import animate from 'animate.css';
 
