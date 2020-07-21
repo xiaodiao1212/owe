@@ -1,6 +1,7 @@
 import Vue from 'vue';
 
 import ElementUI from 'element-ui';
+import 'normalize.css'
 // import VueAwesomeSwiper from 'vue-awesome-swiper';
 // import Swiper from "swiper";
 import './utils/rem.ts';

@@ -8,9 +8,9 @@ const postcss = pxtorem({
   unitPrecision: 5,
   propList: ['*'],
   // selectorBlackList: [/^p/],
-  selectorBlackList: ['layout'],
+  selectorBlackList: ['.layout', '.body'],
   replace: true,
-  mediaQuery: true,
+  mediaQuery: false,
   minPixelValue: 6
 })
 
@@ -31,6 +31,15 @@ const chainWebpack = config => {
   // config.output.filename('[name].[hash].js').end()
   // 覆盖原 font 打包机制，所有的 font 不做处理
   config.module.rule('fonts').use('url-loader').tap(() => { })
+  config.module
+      .rule('vue')
+      .use('vue-loader')
+        .loader('vue-loader')
+        .tap(options => {
+          console.log(options)
+          // 修改它的选项...
+          return options
+        })
 }
 
 module.exports = {

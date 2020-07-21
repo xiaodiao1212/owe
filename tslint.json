@@ -1,15 +1,12 @@
 {
   "defaultSeverity": "warning",
-  "extends": [
-    "tslint:recommended"
-  ],
+  "extends": [],
   "linterOptions": {
     "exclude": [
       "node_modules/**"
     ]
   },
   "rules": {
-    "quotemark": [true, "single"],
     "indent": [false, "tabs", 2],
     "interface-name": false,
     "ordered-imports": false,

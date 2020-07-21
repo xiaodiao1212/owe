@@ -4726,6 +4726,10 @@ normalize-wheel@^1.0.1:
   version "1.0.1"
   resolved "http://192.168.14.11:8888/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
 
+normalize.css@^8.0.1:
+  version "8.0.1"
+  resolved "http://192.168.14.11:8888/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "http://192.168.14.11:8888/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -4771,6 +4775,10 @@ object-copy@^0.1.0:
     copy-descriptor "^0.1.0"
     define-property "^0.2.5"
     kind-of "^3.0.3"
+
+object-fit-images@^3.2.4:
+  version "3.2.4"
+  resolved "http://192.168.14.11:8888/object-fit-images/-/object-fit-images-3.2.4.tgz#6c299d38fdf207746e5d2d46c2877f6f25d15b52"
 
 object-inspect@^1.7.0:
   version "1.7.0"

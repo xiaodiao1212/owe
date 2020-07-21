@@ -13,43 +13,47 @@ export default {
 </script>
 
 <style>
-@media screen and (min-width: 1120px){
-  /* body {
-    width: 1600px;
-  } */
+.body {
+  width: 1200px;
+}
+.layout {
+  width: 1120px;
+  margin: 0 auto;
+}
+/* @media screen and (min-width: 1120px){
   .layout {
     width: 1120px;
     margin: 0 auto;
   }
-}
+} */
 @media screen and (min-width: 1280px){
-  /* body {
-    width: 1600px;
-  } */
+  .body {
+    width: 1280px;
+  }
   .layout {
     width: 1120px;
     margin: 0 auto;
-    padding: 0 80px;
+    /* padding: 0 80px; */
   }
 }
 @media screen and (min-width: 1440px){
-  /* body {
-    width: 1600px;
-  } */
+  .body {
+    width: 1440px;
+  }
   .layout {
     width: 1280px;
     margin: 0 auto;
-    padding: 0 80px;
+    /* padding: 0 80px; */
   }
 }
 @media screen and (min-width: 1600px){
-  /* body {
+  .body {
     width: 1600px;
-  } */
+  }
   .layout {
     width: 1440px;
     margin: 0 auto;
-    padding: 0 80px;
+    /* padding: 0 80px; */
   }
 }
 
